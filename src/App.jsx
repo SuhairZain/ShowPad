@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 
+import {Card, CardText} from 'material-ui/Card';
+
 class App extends Component{
     render() {
         return (
-            <h1>Hello Cool App</h1>
+            <Card>
+                <CardText>Hello MUI</CardText>
+            </Card>
         );
     }
 }
