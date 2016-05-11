@@ -17,6 +17,21 @@ class App extends Component{
         });
     };
 
+    styles = {
+        textStyle: {
+            fontSize: '5em',
+            fontWeight: '100',
+            textAlign: 'center',
+            color: '#fff'
+        },
+
+        fieldStyle: {
+            paddingLeft: '20px',
+            paddingRight: '20px',
+            width: 'calc(100% - 80px)'
+        }
+    };
+
     render() {
         return (
             <div>
@@ -24,9 +39,11 @@ class App extends Component{
                     <TextField
                         hintText="Enter something here to show it out"
                         onChange={this.onTextChange}
-                        fullWidth={true}/>
+                        style={this.styles.fieldStyle}/>
                 </Card>
-                <p>{this.state.text===""?"EMPTY":this.state.text}</p>
+                <p style={this.styles.textStyle}>
+                    {this.state.text===""?"Enter something above and it will be shown here":this.state.text}
+                </p>
             </div>
         );
     }
