@@ -26,7 +26,7 @@ class App extends Component{
                         onChange={this.onTextChange}
                         fullWidth={true}/>
                 </Card>
-                <p>{this.state.text.isEmpty()?"EMPTY":this.state.text}</p>
+                <p>{this.state.text===""?"EMPTY":this.state.text}</p>
             </div>
         );
     }
