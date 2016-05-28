@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import {emojify} from 'react-emojione';
+
 import {Card} from 'material-ui/Card';
 import TextField from 'material-ui/TextField'
 
@@ -29,6 +31,13 @@ class App extends Component{
             paddingLeft: '20px',
             paddingRight: '20px',
             width: 'calc(100% - 80px)'
+        },
+
+        emojiStyle: {
+            backgroundImage: 'url(emojione.sprites.png)',
+            width: '64px',
+            height: '64px',
+            margin: '4px'
         }
     };
 
@@ -42,7 +51,13 @@ class App extends Component{
                         style={this.styles.fieldStyle}/>
                 </Card>
                 <p style={this.styles.textStyle}>
-                    {this.state.text===""?"Enter something above and it will be shown here":this.state.text}
+                    {
+                        emojify(
+                            this.state.text===""?
+                                "Enter something :cool: above and it will be shown here :)":
+                                this.state.text
+                        , {styles: this.styles.emojiStyle})
+                    }
                 </p>
             </div>
         );
